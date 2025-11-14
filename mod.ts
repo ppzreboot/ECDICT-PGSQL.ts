@@ -22,11 +22,14 @@ interface I_ecdict {
 }
 
 export
+type I_lookup_from_ECDICT = (word: string) => Promise<I_ecdict | null>
+
+export
 function make_ECDICT_PGSQL(
     sql: Postgres.Sql,
     schema_name: string,
     table_name: string,
-) {
+): I_lookup_from_ECDICT {
     return async function lookup_from_ECDICT(word: string) {
         if (word.length > 100 || word.length === 0)
             return null

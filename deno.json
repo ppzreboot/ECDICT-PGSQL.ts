@@ -2,6 +2,7 @@
   "name": "@ppz-ai/ecdict-pgsql",
   "version": "0.0.0",
   "exports": "./mod.ts",
+  "license": "UNLICENSED",
   "tasks": {
     "test": "deno test --allow-env --allow-net"
   },
