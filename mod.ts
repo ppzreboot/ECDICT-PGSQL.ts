@@ -29,7 +29,7 @@ interface I_ecdict {
     frq: null | number
     lemma: null | {
         lemma: string
-        type: string
+        type: I_inflection_type[]
     }
     inflection: Record<I_inflection_type, string | undefined>
 }
@@ -77,7 +77,7 @@ function make_ECDICT_PGSQL(
                 ? null
                 : {
                     lemma: exchange['0'],
-                    type: {
+                    type: (exchange['1'] as string).split('').map(t => ({
                         p: 'did',
                         d: 'done',
                         i: 'ing',
@@ -85,7 +85,7 @@ function make_ECDICT_PGSQL(
                         r: 'er',
                         t: 'est',
                         s: 's',
-                    }[exchange['1'] as 'p' | 'd' | 'i' | '3' | 'r' | 't' | 's'],
+                    }[t as 'p' | 'd' | 'i' | '3' | 'r' | 't' | 's']) as I_inflection_type),
                 }
             ,
             inflection: record.exchange === null

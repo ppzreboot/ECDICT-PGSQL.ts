@@ -20,7 +20,7 @@ Deno.test('lookup test', async t => {
         assert(result.word === 'went')
         assert(result.lemma !== null)
         assert(result.lemma.lemma === 'go')
-        assert(result.lemma.type === 'did')
+        assert(result.lemma.type[0] === 'did')
         assert(Object.entries(result.inflection).length === 0)
     })
     await t.step('Inflection - 词组 - gEt up', async () => {
@@ -36,7 +36,7 @@ Deno.test('lookup test', async t => {
         assert(result.word === 'heroes')
         assert(result.lemma !== null)
         assert(result.lemma.lemma === 'hero')
-        assert(result.lemma.type === 's')
+        assert(result.lemma.type[0] === 's')
         assert(Object.entries(result.inflection).length === 0)
     })
     await t.step('Inflection - homograph - tear', async () => {
@@ -51,6 +51,18 @@ Deno.test('lookup test', async t => {
         assert(result.inflection.does === 'tears')
         assert(result.inflection.er === undefined)
         assert(result.inflection.est === undefined)
+    })
+    await t.step('Inflection - found', async () => {
+        const result = await lookup('found')
+        assert(result !== null)
+        assert(result.word === 'found')
+        assert(result.lemma !== null)
+        assert(result.lemma.lemma === 'find')
+        assert(result.lemma.type.includes('did'))
+        assert(result.lemma.type.includes('done'))
+        assert(result.lemma.type.length === 2)
+        assert(result.inflection.did === 'founded')
+        assert(result.inflection.done === 'founded')
     })
     await t.step('clean up', () => {
         sql.end()
