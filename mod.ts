@@ -18,7 +18,7 @@ interface I_ecdict {
     // tag: string[]
     bnc: null | number
     frq: null | number
-    exchange: Record<I_exchange_type, string | undefined>
+    inflection: Record<I_exchange_type, string | undefined>
 }
 
 export
@@ -51,7 +51,7 @@ function make_ECDICT_PGSQL(
             oxford: record.oxford === 1,
             bnc: record.bnc,
             frq: record.frq,
-            exchange: record.exchange === null
+            inflection: record.exchange === null
                 ? {}
                 : (
                     Object.fromEntries(

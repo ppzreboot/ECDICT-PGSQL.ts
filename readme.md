@@ -1,4 +1,4 @@
-# ECDICT-PGSQL.ts
+# ecdict-pgsql
 
 > 运行时不检查数据库里的数据的合法性
 
