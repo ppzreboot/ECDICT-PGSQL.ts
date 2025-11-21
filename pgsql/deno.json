@@ -1,14 +1,14 @@
 {
   "name": "@ppz-ai/ecdict-pgsql",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "exports": "./mod.ts",
   "license": "UNLICENSED",
   "tasks": {
     "test": "deno test --allow-env --allow-net"
   },
   "imports": {
+    "@ppz-ai/ecdict-common": "jsr:@ppz-ai/ecdict-common@^0.3.1",
     "@std/assert": "jsr:@std/assert@1",
-    "@ppz-ai/ecdict-types": "jsr:@ppz-ai/ecdict-types@^0.0.0",
     "postgres": "npm:postgres@^3.4.7"
   }
 }

@@ -2,7 +2,6 @@ import { assert } from '@std/assert'
 import Postgres from 'postgres'
 import { make_ECDICT_PGSQL } from './mod.ts'
 
-
 Deno.test('lookup test', async t => {
     const sql = Postgres(Deno.env.get('PGURI')!)
     const lookup = make_ECDICT_PGSQL(
