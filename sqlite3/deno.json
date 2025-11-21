@@ -1,0 +1,20 @@
+{
+  "name": "@ppz-ai/ecdict-sqlite3",
+  "version": "0.3.0",
+  "exports": "./mod.ts",
+  "license": "UNLICENSED",
+  "publish": {
+    "include": [
+      "./mod.ts",
+      "./readme.md"
+    ]
+  },
+  "tasks": {
+    "test": "deno test --allow-env --allow-ffi --allow-read"
+  },
+  "imports": {
+    "@db/sqlite": "jsr:@db/sqlite@^0.13.0",
+    "@ppz-ai/ecdict-common": "jsr:@ppz-ai/ecdict-common@^0.3.1",
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
