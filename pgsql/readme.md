@@ -2,6 +2,10 @@
 
 > 运行时不检查数据库里的数据的合法性
 
+``` bash
+deno add jsr:@ppz-ai/ecdict-pgsql
+```
+
 ### Test
 
 ``` bash
