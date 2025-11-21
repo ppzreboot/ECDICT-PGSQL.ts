@@ -2,9 +2,6 @@ export
 type I_collins = 1 | 2 | 3 | 4 | 5
 
 export
-type I_exchange_type = 'p' | 'd' | 'i' | '3' | 'r' | 't' | 's' | '0' | '1'
-
-export
 type I_inflection_type
     = 'did' // Past Tense
     | 'done' // Past Participle

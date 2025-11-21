@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "pgsql"
+        },
+        {
+            "path": "sqlite3"
+        },
+        {
+            "path": "common"
+        }
+    ],
+    "settings": {
+        "deno.enable": true
+    }
+}

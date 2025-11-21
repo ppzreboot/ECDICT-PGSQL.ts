@@ -1,0 +1,6 @@
+{
+  "name": "@ppz-ai/ecdict-common",
+  "version": "0.3.0",
+  "exports": "./mod.ts",
+  "license": "UNLICENSED"
+}
